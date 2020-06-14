@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import './new_page.dart' show NextPage;
+import './search.dart' show SearchPage;
+import './room.dart' show RoomPage;
+import './alarm.dart' show AlarmPage;
+import './my_page.dart' show MyPage;
 
 
 void main() {
@@ -21,10 +24,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (context) => MyHomePage(title: 'Rope'),
-        '/search': (context) => NextPage(),
-        '/room': (context) => NextPage(),
-        '/alarm': (context) => NextPage(),
-        '/my_page': (context) => NextPage(),
+        '/search': (context) => SearchPage(),
+        '/room': (context) => RoomPage(),
+        '/alarm': (context) => AlarmPage(),
+        '/my_page': (context) => MyPage(),
 
       },
     );
