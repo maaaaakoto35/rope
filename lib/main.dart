@@ -116,7 +116,9 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: (int index) {
             print(index);
             if (index == 1) Navigator.of(context).pushNamed('/search');
-            else if (index == 2) Navigator.of(context).pushNamed('/search');
+            else if (index == 2) Navigator.of(context).pushNamed('/room');
+            else if (index == 3) Navigator.of(context).pushNamed('/alarm');
+            else if (index == 4) Navigator.of(context).pushNamed('/my_page');
             else Navigator.of(context).pushNamed('/');
         },
       ),
