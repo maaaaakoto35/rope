@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyPage extends StatelessWidget {
+  int _currentIndex = 0;
   @override
   // ignore: missing_return
   Widget build(BuildContext context) {
@@ -33,10 +34,15 @@ class MyPage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: const [
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(Icons.home, color: Colors.grey),
+            title: Text(
+              'Home',
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.find_replace),
@@ -51,12 +57,21 @@ class MyPage extends StatelessWidget {
             title: Text('Alarm'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            title: Text('MyPage'),
+            icon: Icon(Icons.account_circle, color: Colors.blue),
+            title: Text(
+              'Search',
+              style: TextStyle(
+                color: Colors.blue,
+              ),
+            ),
           ),
         ],
+        currentIndex: _currentIndex,
+        selectedItemColor: Colors.blue,
+        // onTap: _onItemTapped,
         onTap: (int index) {
-          print(index);
+          // print(index);
+          _currentIndex = index;
           if (index == 1) Navigator.of(context).pushNamed('/search');
           else if (index == 2) Navigator.of(context).pushNamed('/room');
           else if (index == 3) Navigator.of(context).pushNamed('/alarm');

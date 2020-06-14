@@ -55,6 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
   PageController _pageController;
   int _page = 0;
 
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,9 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: const [
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home, color: Colors.blue,),
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
@@ -116,8 +118,12 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text('MyPage'),
           ),
         ],
+        currentIndex: _currentIndex,
+        selectedItemColor: Colors.blue,
+        // onTap: _onItemTapped,
         onTap: (int index) {
-            print(index);
+            // print(index);
+             _currentIndex = index;
             if (index == 1) Navigator.of(context).pushNamed('/search');
             else if (index == 2) Navigator.of(context).pushNamed('/room');
             else if (index == 3) Navigator.of(context).pushNamed('/alarm');

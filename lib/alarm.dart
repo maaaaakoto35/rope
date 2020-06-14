@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AlarmPage extends StatelessWidget {
+  int _currentIndex = 0;
   @override
   // ignore: missing_return
   Widget build(BuildContext context) {
@@ -33,10 +34,15 @@ class AlarmPage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: const [
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(Icons.home, color: Colors.grey),
+            title: Text(
+              'Home',
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.find_replace),
@@ -47,16 +53,25 @@ class AlarmPage extends StatelessWidget {
             title: Text('Room'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_alarm),
-            title: Text('Alarm'),
+            icon: Icon(Icons.add_alarm, color: Colors.blue,),
+            title: Text(
+              'Alarm',
+              style: TextStyle(
+                color: Colors.blue,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
             title: Text('MyPage'),
           ),
         ],
+        currentIndex: _currentIndex,
+        selectedItemColor: Colors.blue,
+        // onTap: _onItemTapped,
         onTap: (int index) {
-          print(index);
+          // print(index);
+          _currentIndex = index;
           if (index == 1) Navigator.of(context).pushNamed('/search');
           else if (index == 2) Navigator.of(context).pushNamed('/room');
           else if (index == 3) Navigator.of(context).pushNamed('/alarm');
