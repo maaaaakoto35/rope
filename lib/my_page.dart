@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MyPage extends StatelessWidget {
+class MyPage extends StatefulWidget {
+
+  @override
+  _MyPage createState() => _MyPage();
+}
+
+class _MyPage extends State<MyPage> {
   int _currentIndex = 0;
   @override
   // ignore: missing_return
@@ -59,7 +65,7 @@ class MyPage extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle, color: Colors.blue),
             title: Text(
-              'Search',
+              'MyPage',
               style: TextStyle(
                 color: Colors.blue,
               ),

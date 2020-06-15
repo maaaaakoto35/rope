@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
-class AlarmPage extends StatelessWidget {
+class AlarmPage extends StatefulWidget {
+
+  @override
+  _AlarmPage createState() => _AlarmPage();
+}
+
+class _AlarmPage extends State<AlarmPage> {
   int _currentIndex = 0;
   @override
   // ignore: missing_return

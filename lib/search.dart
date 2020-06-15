@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
+  @override
+  _SearchPage createState() => _SearchPage();
+}
+
+class _SearchPage extends State<SearchPage> {
   int _currentIndex = 0;
   @override
   // ignore: missing_return

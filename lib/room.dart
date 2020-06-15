@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
-class RoomPage extends StatelessWidget {
+class RoomPage extends StatefulWidget {
+
+  @override
+  _RoomPage createState() => _RoomPage();
+}
+
+class _RoomPage extends State<RoomPage> {
   int _currentIndex = 0;
   @override
   // ignore: missing_return
